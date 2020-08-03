@@ -1,6 +1,6 @@
 FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-devel
 
-# Dependencies for opencv
+# Dependencies for opencv and wget
 RUN apt-get update && apt-get install -y \
   libsm6 \
   libxext6 \
@@ -18,7 +18,7 @@ RUN pip install gdown
 RUN gdown --id 1VmUzgu0qlmCMqM1ajoOZxOXP3hiC_qlL
 RUN gdown --id 1zQe00W02veVYq-hdq5WsPOS3OPkNdq79
 
-RUN pip install yacs opencv-python
+RUN pip install yacs opencv-python pandas
 
 WORKDIR /content/model_data
  
