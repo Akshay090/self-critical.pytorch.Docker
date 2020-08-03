@@ -29,7 +29,13 @@ WORKDIR /content
 
 RUN git clone https://gitlab.com/vedanuj/vqa-maskrcnn-benchmark.git
 WORKDIR /content/vqa-maskrcnn-benchmark
+
 # Compile custom layers and build mask-rcnn backbone
+# Run below commands manually after this image is built by running it with gpu : 
+#   docker build -t akshay090/self-critical.pytorch .
+#   docker run -it --gpus all akshay090/self-critical.pytorch
+#   then open new terminal and docker commit [container ID] akshay090/self-critical.pytorch
+#   After this its ready to use
 # RUN python setup.py build
 # RUN python setup.py develop
 # RUN python -c 'import sys; sys.path.append("/content/vqa-maskrcnn-benchmark")'
